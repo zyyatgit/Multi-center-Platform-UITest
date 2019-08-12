@@ -12,8 +12,10 @@ let assert = require('assert')
 let driver = new webdriver.Builder().forBrowser('chrome').build()
 driver.get('http://localhost:8080/#/')
 
+username = "18888888885"
+password = "123456"
+
 // 登录
-driver.findElement(By.xpath('//*[@id="login-box"]/form/div[1]/div/div/input')).clear()
-driver.findElement(By.xpath('//*[@id="login-box"]/form/div[1]/div/div/input')).sendKeys("18888888885")
-driver.findElement(By.id('ps')).sendKeys("123456")
+driver.findElement(By.xpath('//*[@id="login-box"]/form/div[1]/div/div/input')).sendKeys(username)
+driver.findElement(By.id('ps')).sendKeys(password)
 driver.findElement(By.xpath('//*[@id="login-box"]/div[1]/button')).click()
